@@ -7,4 +7,6 @@
     <string name="content_description_paste">Paste</string>
     <string name="content_description_cut">Cut</string>
     <string name="content_description_up">Up</string>
+    <string name="content_description_list_layout">List Layout</string>
+    <string name="content_description_grid_layout">Grid Layout</string>
 </resources>
