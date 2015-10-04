@@ -8,11 +8,10 @@
     <FrameLayout
         android:layout_width="80dp"
         android:layout_height="match_parent"
-        android:layout_gravity="right"
-        android:id="@+id/navigation_frame"></FrameLayout>
+        android:id="@+id/navigation_frame"/>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/items_frame"></FrameLayout>
+        android:id="@+id/items_frame"/>
 </LinearLayout>
