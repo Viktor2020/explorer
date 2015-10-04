@@ -3,4 +3,8 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="content_description_copy">Copy</string>
+    <string name="content_description_paste">Paste</string>
+    <string name="content_description_cut">Cut</string>
+    <string name="content_description_up">Up</string>
 </resources>

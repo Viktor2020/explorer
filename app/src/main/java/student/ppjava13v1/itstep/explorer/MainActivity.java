@@ -1,9 +1,12 @@
 package student.ppjava13v1.itstep.explorer;
 
+import android.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import student.ppjava13v1.itstep.explorer.fragments.MainFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,6 +14,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Fragment fragment = new MainFragment();
+
+        getFragmentManager().beginTransaction()
+                .add(R.id.main_display, fragment)
+                .commit();
     }
 
     @Override

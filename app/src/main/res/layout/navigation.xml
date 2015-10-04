@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/btn_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/content_description_up"
+        android:src="@drawable/ic_folder_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/btn_copy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/content_description_copy"
+        android:src="@drawable/ic_content_copy_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/btn_paste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/content_description_paste"
+        android:src="@drawable/ic_content_paste_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/btn_cut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/content_description_cut"
+        android:src="@drawable/ic_content_cut_black_24dp" />
+
+</LinearLayout>
