@@ -13,7 +13,11 @@ import student.ppjava13v1.itstep.explorer.R;
 
 public class ItemsFragment extends Fragment {
 
+    public static final String TAG = "ItemsFragmentTAG";
+
     private ListAdapter adapter;
+
+    int resource = ContentLocation.LIST.id; // default LIST
 
     public static ItemsFragment newInstance(ListAdapter adapter) {
         ItemsFragment itemsFragment = new ItemsFragment();
@@ -21,11 +25,18 @@ public class ItemsFragment extends Fragment {
         return itemsFragment;
     }
 
+    public static ItemsFragment newInstance(ListAdapter adapter, ContentLocation resource) {
+        ItemsFragment itemsFragment = new ItemsFragment();
+        itemsFragment.adapter = adapter;
+        itemsFragment.resource = resource.id;
+        return itemsFragment;
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_item_grid, container, false);
+        View rootView = inflater.inflate(resource, container, false);
 
         AbsListView view = (AbsListView) rootView.findViewById(R.id.list);
         view.setAdapter(adapter);

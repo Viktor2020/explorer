@@ -7,26 +7,45 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import student.ppjava13v1.itstep.explorer.R;
+import java.util.List;
 
-public class MainFragment extends Fragment {
+import student.ppjava13v1.itstep.explorer.FileManager;
+import student.ppjava13v1.itstep.explorer.R;
+import student.ppjava13v1.itstep.explorer.adapters.ItemAdapter;
+import student.ppjava13v1.itstep.explorer.model.ItemModel;
+
+public class MainFragment extends Fragment implements OnChangeLayout {
+
+    public static final String TAG = "MainFragmentTAG";
+
+    private ItemAdapter listAdapter;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-
         View rootView = inflater.inflate(R.layout.main_fragment, container, false);
+        List<ItemModel> itemModels = FileManager.getFiles(getActivity().getFileStreamPath("").getParentFile(), getActivity());
 
-        Fragment items = new ItemsFragment();
+        listAdapter = new ItemAdapter(getActivity(), 0, itemModels);
 
-        Fragment navigate = new NavigationFragment();
+        Fragment items = ItemsFragment.newInstance(listAdapter);
+
+        Fragment navigate = NavigationFragment.newInstance(listAdapter, this);
 
         getFragmentManager().beginTransaction()
-                .add(R.id.navigation_frame, navigate)
-                .add(R.id.items_frame, items)
+                .add(R.id.navigation_frame, navigate, NavigationFragment.TAG)
+                .add(R.id.items_frame, items, ItemsFragment.TAG)
                 .commit();
 
         return rootView;
     }
+
+    public void changeLayout(ContentLocation contentLocation) {
+        getFragmentManager().beginTransaction()
+                .replace(R.id.items_frame, ItemsFragment.newInstance(listAdapter, contentLocation), ItemsFragment.TAG)
+                .commit();
+    }
+
+
 }

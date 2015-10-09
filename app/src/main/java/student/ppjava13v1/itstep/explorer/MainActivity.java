@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         getFragmentManager().beginTransaction()
                 .add(R.id.main_display, fragment)
                 .commit();
+
     }
 
     @Override
