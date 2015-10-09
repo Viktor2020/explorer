@@ -33,6 +33,20 @@
         android:src="@drawable/ic_content_cut_black_24dp" />
 
     <ImageButton
+        android:id="@+id/btn_create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/content_description_create"
+        android:src="@drawable/ic_create_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/btn_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/content_description_delete"
+        android:src="@drawable/ic_delete_black_24dp" />
+
+    <ImageButton
         android:id="@+id/btn_grid_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

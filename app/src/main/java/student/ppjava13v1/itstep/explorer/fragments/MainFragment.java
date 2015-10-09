@@ -12,9 +12,11 @@ import java.util.List;
 import student.ppjava13v1.itstep.explorer.FileManager;
 import student.ppjava13v1.itstep.explorer.R;
 import student.ppjava13v1.itstep.explorer.adapters.ItemAdapter;
+import student.ppjava13v1.itstep.explorer.dialogs.CreateFileDialogFragment;
 import student.ppjava13v1.itstep.explorer.model.ItemModel;
 
-public class MainFragment extends Fragment implements OnChangeLayout {
+public class MainFragment extends Fragment implements OnChangeLayout, CreateFileDialogFragment.CreateFileListener
+        , CreateFileDialogFragment.CreateFolderListener {
 
     public static final String TAG = "MainFragmentTAG";
 
@@ -31,7 +33,7 @@ public class MainFragment extends Fragment implements OnChangeLayout {
 
         Fragment items = ItemsFragment.newInstance(listAdapter);
 
-        Fragment navigate = NavigationFragment.newInstance(listAdapter, this);
+        Fragment navigate = NavigationFragment.newInstance(listAdapter, this, this, this);
 
         getFragmentManager().beginTransaction()
                 .add(R.id.navigation_frame, navigate, NavigationFragment.TAG)
@@ -48,4 +50,15 @@ public class MainFragment extends Fragment implements OnChangeLayout {
     }
 
 
+    @Override
+    public void createFile(String fileName) {
+        FileManager.createFile(FileManager.getCurrentDirectory(), fileName);
+        listAdapter.setRecords(FileManager.getFiles(FileManager.getCurrentDirectory(), getActivity()));
+    }
+
+    @Override
+    public void createFolder(String folderName) {
+        FileManager.createFolder(FileManager.getCurrentDirectory(), folderName);
+        listAdapter.setRecords(FileManager.getFiles(FileManager.getCurrentDirectory(), getActivity()));
+    }
 }

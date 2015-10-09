@@ -9,4 +9,8 @@
     <string name="content_description_up">Up</string>
     <string name="content_description_list_layout">List Layout</string>
     <string name="content_description_grid_layout">Grid Layout</string>
+    <string name="dialog_title">Create file</string>
+    <string name="content_description_create">Create</string>
+    <string name="content_description_delete">Delete</string>
+    <string name="tv_file_name">Name file</string>
 </resources>
