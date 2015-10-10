@@ -13,4 +13,8 @@
     <string name="content_description_create">Create</string>
     <string name="content_description_delete">Delete</string>
     <string name="tv_file_name">Name file</string>
+    <string name="menu_delete">Delete</string>
+    <string name="menu_copy">Copy</string>
+    <string name="menu_cut">Cut</string>
+
 </resources>
