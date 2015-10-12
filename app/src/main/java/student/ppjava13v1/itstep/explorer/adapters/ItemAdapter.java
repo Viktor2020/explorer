@@ -50,6 +50,8 @@ public class ItemAdapter extends ArrayAdapter<ItemModel> {
             }
         });
 
+        currentView.setOnCreateContextMenuListener(null);
+
         return currentView;
     }
 
